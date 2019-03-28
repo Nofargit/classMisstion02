@@ -1,5 +1,4 @@
 
-
 $(function()
 {
     $("#getAll").click(function()
@@ -36,6 +35,7 @@ function getOne()
         $("#countryNameInput").focus();
         return
     }
+    
     const cb = function(xhr)
     {
     if(xhr.status === 200)
@@ -51,6 +51,7 @@ function showData(xhr)
 {
     let data = JSON.parse(xhr.responseText);
     let messageArea = document.querySelector("#messageArea");
+    messageArea.innerHTML="";  
     for(var i =0; i<data.length; i++)
     {
         let createDiv= document.createElement("div");
@@ -79,6 +80,4 @@ function showData(xhr)
 
     }
 }
-
-
 
